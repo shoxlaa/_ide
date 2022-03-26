@@ -4,15 +4,19 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:_ide.Views"
+        xmlns:vm="clr-namespace:_ide.ViewModels"
+          
         mc:Ignorable="d"
+
          TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
         TextOptions.TextFormattingMode="Ideal"
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
-        FontFamily="{DynamicResource MaterialDesignFont}"
-        Height="450" Width="700" >
+   
+      FontFamily="{DynamicResource MaterialDesignFont}"
+      Height="450" Width="700" >
     <Grid Background="#FF242424">
 
         <Grid.ColumnDefinitions>
@@ -60,7 +64,7 @@
             <DockPanel>
                 <TextBlock DockPanel.Dock="Top" Foreground="White" Text="Get started" 
                  FontSize="15" Margin="180,0,0,0"></TextBlock>
-                <Button  Margin="100,0,40,300"  Content="New Project">
+                <Button Command="{Binding ClickMeCommand}" Margin="100,0,40,300"  Content="New Project" >
               </Button>
             </DockPanel>
         </Grid>

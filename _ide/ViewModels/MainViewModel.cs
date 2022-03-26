@@ -13,11 +13,13 @@ namespace _ide.ViewModels
     {
         [ObservableProperty]
         private BaseViewModel? _currentViewModel;
-        private StartViewModel? _startViewModel; 
+        private StartViewModel? _startViewModel;
+        private EditorViewModel? _editorViewModel;
 
         public MainViewModel()
         {
             _startViewModel = new StartViewModel();
+            _editorViewModel = new EditorViewModel();
             WeakReferenceMessenger.Default.Register<ValueChangedMessage<int>>(this, ChangeView);
             CurrentViewModel = _startViewModel;
         }
@@ -26,7 +28,8 @@ namespace _ide.ViewModels
         {
             CurrentViewModel = integer.Value switch
             {
-                0 => _startViewModel,
+                0 => _startViewModel, 
+                1 => _editorViewModel,
                 _ => throw new Exception("Wrong ViewModel")
             };
         }

@@ -21,6 +21,9 @@
         <DataTemplate DataType="{x:Type vm:StartViewModel}">
             <local:StartView/>
         </DataTemplate>
+        <DataTemplate DataType="{x:Type vm:EditorViewModel}">
+            <local:EditorView/>
+        </DataTemplate>
     </Window.Resources>
     <Grid>
         <ContentControl Content="{Binding CurrentViewModel}"/>
